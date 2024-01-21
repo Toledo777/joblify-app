@@ -1,6 +1,6 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef } from "react";
 import './DropFile.css';
-import uploadIcon from ".\\assets\\cloud_upload_icon.png"
+import uploadIcon from "./assets/cloud_upload_icon.png"
 
 function DropFile(props) {
   const [dragText, setDragText] = useState("Drag & Drop");

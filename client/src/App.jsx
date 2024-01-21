@@ -6,8 +6,9 @@ import DropFile from './DropFile'
 import Header from './components/header/Header'
 import About from './components/about/About'
 import Home from './components/home/Home'
+import Footer from './components/footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Chat from './components/home/Chat'
+import Content from './components/content/Content';
 import LoadingOverlay from 'react-loading-overlay-ts';
 
 function App() {
@@ -32,7 +33,6 @@ function App() {
   }
 
   return (
-    <>
     <LoadingOverlay
       active={isActive}
       spinner
@@ -41,9 +41,10 @@ function App() {
       <Header />
       <About />
       <Home />
-      <Chat />
+      <Content />
       <DropFile load={loading}/>
-    </LoadingOverlay></>
+      <Footer/>
+    </LoadingOverlay>
   )
 }
 
