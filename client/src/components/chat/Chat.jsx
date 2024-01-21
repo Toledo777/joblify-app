@@ -11,7 +11,7 @@ const Chat = () => {
 
   // const fetchData = async () => {
   //   try {
-  //     const response = await fetch('https://api.example.com/data');
+  //     const response = await fetch('https://api.example.com/d');
   //     const data = await response.json();
   //     setData(data);
   //   } catch (error) {
@@ -32,16 +32,19 @@ const Chat = () => {
     if (input.trim()) {
       setMessages([...messages, `User: ${input}`]);
       setInput('');
-  
+      
       try {
-        const response = await fetch('https://api.example.com/data');
+        let formattedMessage = input.replace(/ /g, "%20")
+        const response = await fetch('http://localhost:5051/api/chatting/' + formattedMessage);
         const data = await response.json();
+        console.log(data)
         setData(data);
       } catch (error) {
         console.error('Error:', error);
       }
     }
   };
+  
   
   return (
     <div className="chat">
@@ -52,8 +55,7 @@ const Chat = () => {
       <div>
         {data ? (
           <div>
-            <p>{data.result.response}</p>
-            {console.log(data)}
+            <p>Joblify Assistant {data.result.response}</p>
           </div>
         ) : (
           <p>Loading...</p>
@@ -63,7 +65,7 @@ const Chat = () => {
       <div className="chatForm">
         <form id="chat-form" onSubmit={handleSendMessage}>
           <input type="text" id="chat-input" placeholder="Type your message here..." value={input} onChange={(e) => setInput(e.target.value)}/>
-          <button onClick={fetchData} type="submit">Send</button>
+          <button type="submit">Send</button>
         </form>
       </div>
         
