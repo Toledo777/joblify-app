@@ -4,12 +4,13 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #002852;
+  background-color: (239, 242, 244);
   color: lightgray;
   padding: 10px 0;
+  margin-left: 24px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: left; 
+  align-items: left; 
 }
 
 .footerClass {
