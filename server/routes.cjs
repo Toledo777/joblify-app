@@ -7,8 +7,9 @@ router.get("/test", async (req, res) => {
 });
 
 // fixed by gpt
-router.get("/chatting", async (req, res) => {
+router.get("/chatting/:userContent", async (req, res) => {
     try {
+        let userContent = req.params.userContent;
         let response = await run({
             messages: [
               {
@@ -17,8 +18,7 @@ router.get("/chatting", async (req, res) => {
               },
               {
                 role: "user",
-                content:
-                  "Write a short story about a llama that goes on a journey to find an orange cloud",
+                content: userContent,
               },
             ],
         });
