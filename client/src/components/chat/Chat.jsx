@@ -3,7 +3,7 @@ import "./Chat.css";
 
 const Chat = () => {
 
-    // used chatgpt to help us generate this function 
+  // used chatgpt to help us generate this function 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
 
@@ -15,7 +15,7 @@ const Chat = () => {
     }
   };
 
-  // not this tho 
+  
   return (
     <div className="chat">
       <div id="chat-window">

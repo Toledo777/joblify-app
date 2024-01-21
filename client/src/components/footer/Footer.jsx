@@ -7,8 +7,7 @@ const Footer = () => {
         <div class="footerDiv">
             <h1 class="footerClass">&copy; 2024 Joblify. All Rights Reserved.</h1>
         </div>
-        
-      </div>
+    </div>
   )
 }
 
