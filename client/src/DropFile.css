@@ -1,9 +1,36 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .drag-drop-area{
   border: 2px black dashed;
   min-height: 25em;
-  min-width: 50em;
+  min-width: 40em;
+  max-width: 50em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.icon {
+  max-width: 2.5em;
+  max-height: 2.5em;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.browse{
+  color: blue;
+}
+
+.browse:hover{
+  cursor: pointer;
 }
