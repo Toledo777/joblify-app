@@ -1,19 +1,25 @@
 import React from 'react';
-import "./header.css";
+import "./Header.css";
 
 const Header = () => {
   return (
-    <div class="header">
-        <ul class="left-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Store</a></li>
-        </ul>
-        <ul class="right-links">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Settings</a></li>
-        </ul>
-      </div>
+    <div>
+      <nav className="navbar">
+      <ul className="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <ul className="nav-links">
+        <li><a href="/">Joblify</a></li>
+      </ul>
+      <ul className="nav-links">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    </div>
+    
   )
 }
 
-export default Header
+export default Header;

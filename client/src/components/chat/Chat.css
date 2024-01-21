@@ -1,21 +1,39 @@
-.chat{
+.chat {
+    position: relative; 
     height: 300px;
-    width: 800px;
+    width: 500px;
     background-color: rgb(239, 242, 244);
     padding: 15px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    box-sizing: border-box;
+}
+
+#chat-window {
+    overflow-y: auto;
+    max-height: calc(100% - 60px);
+    margin-bottom: 15px;
+}
+
+.chatForm {
+    width: 100%;
+}
+
+input, button {
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0; 
+}
+
+#chat-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
 }
 
 input {
-    width: 150px;
-    height: 60px;
-}
-
-button {
-    height: 60px;
-    width: 80px;
-}
-
-#chat-form{
-    position: fixed;
-    right: 0;
+    width: calc(100% - 90px); 
+    height: 40px;
+    padding: 0 10px;
 }

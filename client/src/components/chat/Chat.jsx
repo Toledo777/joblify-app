@@ -3,7 +3,7 @@ import "./Chat.css";
 
 const Chat = () => {
 
-    //gpt generated 
+  // used chatgpt to help us generate this function 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
 
@@ -28,7 +28,7 @@ const Chat = () => {
     }
   };
 
-  // not this tho 
+  
   return (
     <div className="chat">
       <div id="chat-window">
@@ -52,7 +52,9 @@ const Chat = () => {
           <button onClick={fetchData} type="submit">Send</button>
         </form>
       </div>
-    </div>
+        
+      </div>
+      
   );
 }
 
