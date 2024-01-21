@@ -10,7 +10,7 @@ const Chat = () => {
   const handleSendMessage = async (event) => {
     event.preventDefault();
     if (input.trim()) {
-      const userMessage = { type: 'user', content: input };
+      const userMessage = { type: 'user', content: "User: " + input };
 
       setMessages([...messages, userMessage]);
       setInput('');
@@ -26,7 +26,7 @@ const Chat = () => {
         const responseData = await response.json();
 
         // Update state with user and assistant messages
-        const assistantMessage = { type: 'assistant', content: responseData.result.response };
+        const assistantMessage = { type: 'assistant', content: "Joblify AI: " + responseData.result.response };
         setMessages([...messages, userMessage, assistantMessage]);
 
         setLoading(false);
@@ -40,6 +40,8 @@ const Chat = () => {
   return (
     <div className="chat">
       <div id="chat-window">
+        <p>Joblify AI: Unlock your career potential!
+        I'm here to help you succeed. Ask me anything!</p>
         {messages.map((message, index) => (
           <div key={index} className={`chat-message ${message.type}`}>
             {message.content}

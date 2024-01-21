@@ -96,7 +96,7 @@ function DropFile() {
           <button className="submit" type="submit" onClick={e => loading(e)}>Submit</button>
         </div> : null}
         {skillDisplay ? <div className="container">
-          <img className="skill" src={skill} alt="Resume Skill Analysis" />
+          <img id="skill" className="skill" src={skill} alt="Resume Skill Analysis" />
           <button className="submit" onClick={e => back(e)}>Go Back</button>
         </div> : null}
       </form>
