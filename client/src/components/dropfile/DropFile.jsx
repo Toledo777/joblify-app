@@ -4,35 +4,43 @@ import uploadIcon from "../../assets/cloud_upload_icon.png";
 import skill from "../../assets/skill.png";
 import LoadingOverlay from 'react-loading-overlay-ts';
 
-function DropFile(props) {
+function DropFile() {
   const [dragText, setDragText] = useState("Drag & Drop");
   const [file, setFile] = useState();
   const inputFile = useRef(null);
   const [dropDisplay, setDropDisplay] = useState(true);
   const [skillDisplay, setSkillDisplay] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
   // for loading overlay
   const [isActive, setActive] = useState(false)
-  const [loadingText, setLoadingText] = useState("Reading your resume...");
+  const [loadingText, setLoadingText] = useState("Reading resume...");
 
   function handleDragEnter(e) {
     e.preventDefault();
     e.stopPropagation();
-    setDragText("Release to Upload");
+    if (!uploaded) setDragText("Release to Upload");      
   }
   function handleDragLeave(e) {
     e.preventDefault();
     e.stopPropagation();
-    setDragText("Drag & Drop");
+    if (!uploaded) setDragText("Drag & Drop");
   }
   function handleDragOver(e) {
     e.preventDefault();
     e.stopPropagation();
-    setDragText("Release to Upload");
+    if (!uploaded) setDragText("Release to Upload");      
+
   }
   function handleDrop(e) {
     e.preventDefault();
     e.stopPropagation();
     setFile(e.dataTransfer.files[0]);
+    setUploaded(true)
+    setDragText("File Uploaded!");
+    setTimeout(() => {
+      setDragText("Drag & Drop");
+      setUploaded(false);
+    }, 3000);
     // console.log(file);
   }
   function filePicker(e) {
@@ -93,7 +101,6 @@ function DropFile(props) {
         </div> : null}
       </form>
     </LoadingOverlay>
-
   );
 }
 
