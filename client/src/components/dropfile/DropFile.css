@@ -1,0 +1,43 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 30em;
+  max-height: 30em;
+  max-width: 100%;
+}
+
+.drag-drop-area{
+  border: 2px black dashed;
+  min-height: 25em;
+  min-width: 40em;
+  max-width: 50em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.icon {
+  max-width: 2.5em;
+  max-height: 2.5em;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.skill{
+  max-width: 50em;
+}
+
+.browse{
+  color: blue;
+}
+
+.browse:hover{
+  cursor: pointer;
+}
