@@ -4,8 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import DropFile from './DropFile'
 import Header from './components/header/Header'
-import About from './components/about/About'
-import Home from './components/home/Home'
 import Footer from './components/footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Content from './components/content/Content';
@@ -39,8 +37,6 @@ function App() {
       text={loadingText}
     >
       <Header />
-      <About />
-      <Home />
       <Content />
       <DropFile load={loading}/>
       <Footer/>

@@ -3,14 +3,17 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  text-align: center;
+  background-color: #002852;
   color: lightgray;
-  margin-left: 100px;
-  margin-bottom: 20px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .footerClass {
-    font-size: 20px;
+  font-size: 20px;
 }
-
 
 
