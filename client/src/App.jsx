@@ -5,8 +5,10 @@ import './App.css'
 import Header from './components/header/Header'
 import About from './components/about/About'
 import Home from './components/home/Home'
+import Footer from './components/footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Chat from './components/home/Chat'
+import Content from './components/content/Content'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +18,8 @@ function App() {
       <Header/>
       <About/>
       <Home/>
-      <Chat/>
+      <Content/>
+      <Footer/>
     </div>
   )
 }
