@@ -1,0 +1,16 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: lightgray;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.footerClass {
+    font-size: 20px;
+}
+
+
+

@@ -1,5 +1,4 @@
-.bg-body-tertiary {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+.header{
+    background-color: rgb(70, 78, 220);
+}
+
