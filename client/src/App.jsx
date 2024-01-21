@@ -14,9 +14,16 @@ function App() {
   return (
     <div>
       <Header />
-      <DropFile />
-      <Content />
+      <div className="main-container">
+            <div className="drop-file-container">
+              <DropFile />
+            </div>
+            <div className="chat-container">
+              <Content />
+            </div>
       <Footer />
+      
+    </div>
     </div>
   )
 }

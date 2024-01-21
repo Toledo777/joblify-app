@@ -10,9 +10,8 @@
 
 .drag-drop-area{
   border: 2px black dashed;
-  min-height: 25em;
-  min-width: 40em;
-  max-width: 50em;
+  height: 300px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
