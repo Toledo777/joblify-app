@@ -7,27 +7,41 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
 
-  // ai assisted
   const [data, setData] = useState('');
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://api.example.com/data');
-      const data = await response.json();
-      setData(data);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch('https://api.example.com/data');
+  //     const data = await response.json();
+  //     setData(data);
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
 
-  const handleSendMessage = (event) => {
+  // const handleSendMessage = (event) => {
+  //   event.preventDefault();
+  //   if (input.trim()) {
+  //     setMessages([...messages, `User: ${input}`]);
+  //     setInput('');
+  //   }
+  // };
+
+  const handleSendMessage = async (event) => {
     event.preventDefault();
     if (input.trim()) {
       setMessages([...messages, `User: ${input}`]);
       setInput('');
+  
+      try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
   };
-
   
   return (
     <div className="chat">
@@ -36,10 +50,10 @@ const Chat = () => {
           <div key={index} className="chat-message"> {message} </div>))}
       </div>
       <div>
-        {/* gpt assisted */}
         {data ? (
           <div>
             <p>{data.result.response}</p>
+            {console.log(data)}
           </div>
         ) : (
           <p>Loading...</p>
