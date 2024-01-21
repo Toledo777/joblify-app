@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Chat.css";
 
 const Chat = () => {
@@ -6,6 +6,19 @@ const Chat = () => {
     //gpt generated 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+
+  // ai assisted
+  const [data, setData] = useState('');
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://api.example.com/data');
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   const handleSendMessage = (event) => {
     event.preventDefault();
@@ -22,13 +35,23 @@ const Chat = () => {
         {messages.map((message, index) => (
           <div key={index} className="chat-message"> {message} </div>))}
       </div>
-      <div class="chatForm">
-        <form id="chat-form" onSubmit={handleSendMessage}>
-        <input type="text" id="chat-input" placeholder="Type your message here..." value={input} onChange={(e) => setInput(e.target.value)}/>
-        <button type="submit">Send</button>
-      </form>
+      <div>
+        {/* gpt assisted */}
+        {data ? (
+          <div>
+            <p>{data.result.response}</p>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
-      
+
+      <div className="chatForm">
+        <form id="chat-form" onSubmit={handleSendMessage}>
+          <input type="text" id="chat-input" placeholder="Type your message here..." value={input} onChange={(e) => setInput(e.target.value)}/>
+          <button onClick={fetchData} type="submit">Send</button>
+        </form>
+      </div>
     </div>
   );
 }
